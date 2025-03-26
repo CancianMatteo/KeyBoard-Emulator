@@ -1,0 +1,4 @@
+".\Objects\DEBUG.obj",
+".\Objects\Keyboard.obj" 
+TO ".\Objects\CH552_KeyboardEmu" 
+PRINT(".\Listings\CH552_KeyboardEmu.m51")
