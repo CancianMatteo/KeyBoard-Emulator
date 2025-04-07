@@ -1,6 +1,7 @@
 #include "USB.h"
 #include "USBHIDKeyboard.h"
-USBHIDKeyboard Keyboard;
+
+USBHIDKeyboard Keyboard(LAYOUT_IT);
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
@@ -25,7 +26,7 @@ void setup() {
   Keyboard.print("example@email.com\t");
   delay(100);
   // Type the pwd
-  Keyboard.print("YourStrongPassword\n");
+  Keyboard.print("YourStrongPassword!\n");
   delay(500);
   // Erase all
   Keyboard.press(KEY_LEFT_CTRL);
