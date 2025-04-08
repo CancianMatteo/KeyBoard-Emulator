@@ -1,15 +1,13 @@
 #include "USB.h"
 #include "USBHIDKeyboard.h"
-
-USBHIDKeyboard Keyboard(LAYOUT_IT);
+USBHIDKeyboard Keyboard;
 
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 
+  Keyboard.setLayout(it_it);
   Keyboard.begin();
-  USB.begin();
-  delay(700);
-  delay(300);
+  delay(2000);
 
   digitalWrite(LED_BUILTIN, HIGH);
   // Press Ctrl+ALt+Canc
@@ -24,9 +22,9 @@ void setup() {
   digitalWrite(LED_BUILTIN, HIGH);
   // Type the email address
   Keyboard.print("example@email.com\t");
-  delay(100);
+  delay(1000);
   // Type the pwd
-  Keyboard.print("YourStrongPassword!\n");
+  Keyboard.println("YourStrongPassword!");
   delay(500);
   // Erase all
   Keyboard.press(KEY_LEFT_CTRL);
@@ -44,7 +42,7 @@ void setup() {
   digitalWrite(LED_BUILTIN, HIGH);
   // Cmd > gpupdate /force
   Keyboard.print("\tprompt\n");
-  delay(2000);
+  delay(1000);
   Keyboard.print("gpupdate /force\n");
   digitalWrite(LED_BUILTIN, LOW);
 }
