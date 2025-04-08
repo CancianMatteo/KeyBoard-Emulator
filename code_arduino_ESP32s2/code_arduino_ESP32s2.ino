@@ -7,7 +7,7 @@ void setup() {
 
   Keyboard.setLayout(it_it);
   Keyboard.begin();
-  delay(2000);
+  delay(1000);
 
   digitalWrite(LED_BUILTIN, HIGH);
   // Press Ctrl+ALt+Canc
@@ -17,15 +17,15 @@ void setup() {
   delay(100);
   Keyboard.releaseAll();
   digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);
+  delay(1000);
 
   digitalWrite(LED_BUILTIN, HIGH);
   // Type the email address
-  Keyboard.print("example@email.com\t");
-  delay(1000);
-  // Type the pwd
-  Keyboard.println("YourStrongPassword!");
+  Keyboard.print("example@email.it\t");
   delay(500);
+  // Type the pwd
+  Keyboard.println("StrongPassword!");
+  delay(100);
   // Erase all
   Keyboard.press(KEY_LEFT_CTRL);
   Keyboard.press('a');
@@ -35,15 +35,29 @@ void setup() {
   delay(100);
   Keyboard.releaseAll();
   digitalWrite(LED_BUILTIN, LOW);
+  delay(15000);   // Login...
 
-  // Login...
-  delay(10000);
+  digitalWrite(LED_BUILTIN, HIGH);
+  // Open Word
+  Keyboard.press(KEY_LEFT_GUI); // Windows key
+  Keyboard.press('s');
+  delay(100);
+  Keyboard.releaseAll();
+  Keyboard.println("word");
+  delay(5000);   // Opening Word
+  Keyboard.print("\n");
+  digitalWrite(LED_BUILTIN, LOW);
+  delay(10000);   // Check printer...
   
   digitalWrite(LED_BUILTIN, HIGH);
-  // Cmd > gpupdate /force
-  Keyboard.print("\tprompt\n");
+  // Cmd > gpupdate /force (update working group policy)
+  Keyboard.press(KEY_LEFT_GUI); // Windows key
+  Keyboard.press('s');
+  delay(100);
+  Keyboard.releaseAll();
+  Keyboard.println("prompt");
   delay(1000);
-  Keyboard.print("gpupdate /force\n");
+  Keyboard.println("gpupdate /force");
   digitalWrite(LED_BUILTIN, LOW);
 }
 
