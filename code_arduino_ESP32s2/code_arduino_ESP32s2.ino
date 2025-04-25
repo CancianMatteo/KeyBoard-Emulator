@@ -14,10 +14,10 @@ void setup() {
   Keyboard.press(KEY_LEFT_CTRL);
   Keyboard.press(KEY_LEFT_ALT);
   Keyboard.press(KEY_DELETE);
-  delay(100);
+  delay(200);
   Keyboard.releaseAll();
   digitalWrite(LED_BUILTIN, LOW);
-  delay(1000);
+  delay(2000);
 
   digitalWrite(LED_BUILTIN, HIGH);
   // Type the email address
