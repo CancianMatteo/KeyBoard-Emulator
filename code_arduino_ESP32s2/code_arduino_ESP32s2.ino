@@ -17,14 +17,14 @@ void setup() {
   delay(200);
   Keyboard.releaseAll();
   digitalWrite(LED_BUILTIN, LOW);
-  delay(2000);
+  delay(3000);
 
   digitalWrite(LED_BUILTIN, HIGH);
   // Type the email address
-  Keyboard.print("example@email.com\t");
-  delay(1000);
+  Keyboard.print("example@email.com");
+  delay(500);
   // Type the pwd
-  Keyboard.println("strongPassword");
+  Keyboard.println("\tMyStrongPassword!");  // \t is for Tab
   delay(200);
   // Erase all
   Keyboard.press(KEY_LEFT_CTRL);
