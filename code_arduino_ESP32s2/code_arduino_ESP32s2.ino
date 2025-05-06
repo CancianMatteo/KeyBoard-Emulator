@@ -23,8 +23,11 @@ void setup() {
   // Type the email address
   Keyboard.print("example@email.com");
   delay(500);
+  // \t is for Tab
+  Keyboard.print("\t"); 
+  delay(100);
   // Type the pwd
-  Keyboard.println("\tMyStrongPassword!");  // \t is for Tab
+  Keyboard.println("MyStrongPassword!");
   delay(200);
   // Erase all
   Keyboard.press(KEY_LEFT_CTRL);
